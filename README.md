@@ -1,32 +1,33 @@
-# Complex Numbers
+# Satellite
 
-A complex number is a number in the form `a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
+Imagine you need to transmit a binary tree to a satellite approaching Alpha
+Centauri and you have limited bandwidth. Since the tree has no repeating
+items it can be uniquely represented by its [pre-order and in-order traversals][wiki].
 
-`a` is called the real part and `b` is called the imaginary part of `z`.
-The conjugate of the number `a + b * i` is the number `a - b * i`.
-The absolute value of a complex number `z = a + b * i` is a real number `|z| = sqrt(a^2 + b^2)`. The square of the absolute value `|z|^2` is the result of multiplication of `z` by its complex conjugate.
+Write the software for the satellite to rebuild the tree from the traversals.
 
-The sum/difference of two complex numbers involves adding/subtracting their real and imaginary parts separately:
-`(a + i * b) + (c + i * d) = (a + c) + (b + d) * i`,
-`(a + i * b) - (c + i * d) = (a - c) + (b - d) * i`.
+A pre-order traversal reads the value of the current node before (hence "pre")
+reading the left subtree in pre-order. Afterwards the right subtree is read
+in pre-order.
 
-Multiplication result is by definition
-`(a + i * b) * (c + i * d) = (a * c - b * d) + (b * c + a * d) * i`.
+An in-order traversal reads the left subtree in-order then the current node and
+finally the right subtree in-order. So in order from left to right.
 
-The reciprocal of a non-zero complex number is
-`1 / (a + i * b) = a/(a^2 + b^2) - b/(a^2 + b^2) * i`.
+For example the pre-order traversal of this tree is [a, i, x, f, r].
+The in-order traversal of this tree is [i, a, f, x, r]
 
-Dividing a complex number `a + i * b` by another `c + i * d` gives:
-`(a + i * b) / (c + i * d) = (a * c + b * d)/(c^2 + d^2) + (b * c - a * d)/(c^2 + d^2) * i`.
+```
+  a
+ / \
+i   x
+   / \
+  f   r
+```
 
-Raising e to a complex exponent can be expressed as `e^(a + i * b) = e^a * e^(i * b)`, the last term of which is given by Euler's formula `e^(i * b) = cos(b) + i * sin(b)`.
+Note: the first item in the pre-order traversal is always the root.
 
-Implement the following operations:
- - addition, subtraction, multiplication and division of two complex numbers,
- - conjugate, absolute value, exponent of a given complex number.
+[wiki]: https://en.wikipedia.org/wiki/Tree_traversal
 
-
-Assume the programming language you are using does not have an implementation of complex numbers.
 
 ## Requirements
 
