@@ -1,6 +1,6 @@
 
-class ComplexNumber {
+class BinarySearchTree {
 //type code here
 }
 
-module.exports = ComplexNumber
+module.exports = BinarySearchTree
